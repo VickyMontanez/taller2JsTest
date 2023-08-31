@@ -1,21 +1,12 @@
-export const notas = ()=>{
-    let notas = [];
-    let promedio= 0;
+import { notas } from "../../../version/v1/notas"
 
-    for (let i= 1; i< 4; i++){
-        notas.push(parseFloat(prompt(`Ingresa tu nota ${i}`)))
-    };
-    for(let i=0; i<3; i++){
-        promedio += notas[i]/3
-    };
-
-    console.log("Tus notas son: ",notas);
-    console.log("Tu promedio es: ", promedio.toFixed(2));
-
-    if (promedio <= 3.9){
-        console.log("Estudie (ㆆ_ㆆ)");
-    } else{
-        console.log("Becado ʕ•́ᴥ•̀ʔっ")
-    }
-
-}
+describe("test del archivo notas.js", () => {
+    const app= notas(2,3,5)
+    test('la funcion notas cuando se pierde el promedio(Estudie)', () => {
+        expect(app ).toBe("Estudie")
+    })
+    test('la funcion notas cuando se pasa el promedio(Becado)', () => {
+        const app= notas(5,3,5)
+        expect(app ).toBe("Becado")
+    })
+})

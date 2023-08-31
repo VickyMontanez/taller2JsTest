@@ -1,4 +1,4 @@
-export const notas = ()=>{
+export const notas = (nota1, nota2, nota3)=>{
     let notas = [];
     let promedio= 0;
 
@@ -19,4 +19,3 @@ export const notas = ()=>{
     }
 
 }
-
